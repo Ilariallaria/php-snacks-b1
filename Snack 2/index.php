@@ -14,22 +14,44 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
 </head>
 <body>
  
- <?php
+<h2>Inserisci nell' url: ?name='tuo nome' && mail='tua mail? && ege='tua età', poi premi Invio</h2>
+
+<?php
    $userName = $_GET['name'];
    $userMail = $_GET['mail'];
    $userAge = $_GET['age'];
-   echo ($userName . '<br>'. $userMail . '<br>' . $userAge . '<br>');
+   echo ( 'name:' . $userName . '<br>'. 'mail:' . $userMail . '<br>' . 'age:' . $userAge . '<br>');
 
-   $response;
-   if(
-    strlen($userName < 3) && strpos($userMail, '.') !== false && 
-    strpos($userMail, '@') !== false && is_numeric($userAge) !== false && $userAge != 0) {
-    echo $response = 'Accesso riuscito';
-   } else {
-    echo $response = 'Accesso negato';
+//    $response;
+//    if( !$userName || !$userMail || !$userAge){
+//     echo 'NON HAI INSERITO TUTTI I DATI NECESSARI!';
+//    } else {
+//         if(
+//             strlen($userName < 3) && strpos($userMail, '.') !== false && 
+//             strpos($userMail, '@') !== false && is_numeric($userAge) !== false && $userAge > 0) {
+//             echo $response = 'Accesso riuscito';
+//         } else {
+//             echo $response = 'Accesso negato';
+//         }
+//    }
+
+
+    $response;
+   if( !$userName || !$userMail || !$userAge){
+    echo 'NON HAI INSERITO TUTTI I DATI NECESSARI!';
+   } else{
+        if(
+            strlen($userName < 3) && strpos($userMail, '.') !== false && 
+            strpos($userMail, '@') !== false && is_numeric($userAge) !== false && $userAge > 0) {
+            echo $response = 'Accesso riuscito';
+        } else {
+            echo $response = 'Accesso negato';
+        }
    }
- 
- ?>
+
+    
+
+?>
 
 
 </body>
