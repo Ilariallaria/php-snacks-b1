@@ -16,17 +16,21 @@ Olimpia Milano - Cantù | 55-60 -->
 
 <?php
 
+// array che contiene tutte le partite della giornata
 $matches = [
+    // array che contiene una delle partite
     [
     'teamHost' => 'Milano',
     'teamGuest' => 'Kinder',
     'score' => '70 - 93',
     ],
+    // array che contiene una delle partite
     [
     'teamHost' => 'Cetarra',
     'teamGuest' => 'Vercelli',
     'score' => '72 - 90',
     ],
+    // array che contiene una delle partite
     [
     'teamHost' => 'Barilla',
     'teamGuest' => 'Cuneo',
@@ -34,8 +38,7 @@ $matches = [
     ],
 ];
 
-// var_dump($teams);
-
+// ciclo che per ogni partita della giornata, stampa squadre e punteggio
 for($i=0; $i<count($matches); $i++){
     $thisMatch = $matches[$i];
     echo $thisMatch['teamHost'] . " - " . $thisMatch['teamGuest'] . " | " . $thisMatch['score'] . '<br>' ;
